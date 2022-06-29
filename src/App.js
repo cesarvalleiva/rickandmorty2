@@ -1,10 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/Navbar';
+import Personajes from './pages/Personajes';
+import Ubicaciones from './pages/Ubicaciones/Ubicaciones';
 
 function App() {
   return (
-    <div>
-      <h1>Este es nuestro proyecto de R&M</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Personajes />} />
+        <Route path="/ubicaciones" element={<Ubicaciones />} />
+      </Routes>
+    </Router>
   );
 }
 
